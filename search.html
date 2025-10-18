@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-card {
+            background: rgba(255,255,255,0.92);
+            border-radius: 24px;
+            box-shadow: 0 14px 32px rgba(60,90,180,0.10);
+            padding: 36px 34px 20px 34px;
+            max-width: 390px;
+            width: 92%;
+        }
+        .search-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.9em;
+            color: #2980b9;
+            margin-bottom: 15px;
+            justify-content: center;
+            gap: 11px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+        .search-title i {
+            font-size: 1.05em;
+            animation: pulseSearch 1.8s infinite;
+        }
+        @keyframes pulseSearch {
+            0% { color: #2980b9; transform: scale(1); }
+            50% { color: #6dd5ed; transform: scale(1.18); }
+            100% { color: #2980b9; transform: scale(1); }
+        }
+        label {
+            color: #1c334c;
+            font-size: 1.04em;
+            margin-bottom: 5px;
+            font-weight: 600;
+            display: block;
+        }
+        input[type="text"] {
+            width: 96%;
+            padding: 9px 8px;
+            border-radius: 8px;
+            border: 1px solid #69b6fc;
+            font-size: 1em;
+            margin-bottom: 14px;
+            background: #f3fbff;
+        }
+        input[type="submit"] {
+            background: linear-gradient(90deg,#2980b9,#6dd5ed 90%);
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            padding: 11px 33px;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(60,90,180,0.11);
+            transition: background 0.23s, box-shadow 0.18s;
+            font-size: 1em;
+            letter-spacing: 1px;
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg,#6dd5ed,#2980b9 100%);
+            box-shadow: 0 8px 22px rgba(60,130,230,0.14);
+        }
+        .search-footer {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 1.03em;
+            color: #2980b9;
+        }
+        @media (max-width: 480px) {
+            .search-card { padding: 14px 7px 7px 7px; }
+            .search-title { font-size: 1.13em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="search-card">
+        <div class="search-title"><i class="fas fa-search"></i>Search Registration</div>
+        <form action="search.php" method="POST">
+            <label for="search_name"><i class="fas fa-user"></i> Enter Name:</label>
+            <input type="text" id="search_name" name="search_name" required>
+            <input type="submit" value="Search">
+        </form>
+        <div class="search-footer">
+            <i class="fas fa-info-circle"></i>
+            Fast and simple search
+        </div>
+    </div>
+</body>
+</html>

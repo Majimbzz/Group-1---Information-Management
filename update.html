@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #ffd89b 0%, #fff6e4 100%);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .update-card {
+            background: rgba(255,255,245,0.94);
+            border-radius: 25px;
+            box-shadow: 0 14px 32px rgba(220,180,60,0.10);
+            padding: 36px 36px 20px 36px;
+            max-width: 390px;
+            width: 92%;
+        }
+        .update-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.93em;
+            color: #d49e04;
+            margin-bottom: 15px;
+            justify-content: center;
+            gap: 11px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+        .update-title i {
+            font-size: 1.05em;
+            animation: pulseUpdate 1.7s infinite;
+        }
+        @keyframes pulseUpdate {
+            0% { color: #d49e04; transform: scale(1); }
+            50% { color: #fff6e4; transform: scale(1.18); }
+            100% { color: #d49e04; transform: scale(1); }
+        }
+        label {
+            color: #654321;
+            font-size: 1.04em;
+            margin-bottom: 5px;
+            font-weight: 600;
+            display: block;
+        }
+        input[type="text"] {
+            width: 96%;
+            padding: 9px 8px;
+            border-radius: 8px;
+            border: 1px solid #ffd89b;
+            font-size: 1em;
+            margin-bottom: 14px;
+            background: #fefbf7;
+        }
+        input[type="submit"] {
+            background: linear-gradient(90deg,#f6d365,#fda085 90%);
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 14px;
+            padding: 10px 33px;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(220,180,60,0.13);
+            transition: background 0.23s, box-shadow 0.18s;
+            font-size: 1em;
+            letter-spacing: 1px;
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg,#fda085,#f6d365 100%);
+            box-shadow: 0 8px 22px rgba(230,180,60,0.15);
+        }
+        .update-footer {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 1.03em;
+            color: #b19538;
+        }
+        @media (max-width: 480px) {
+            .update-card { padding: 15px 7px 7px 7px; }
+            .update-title { font-size: 1.13em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="update-card">
+        <div class="update-title"><i class="fas fa-edit"></i>Update Registration</div>
+        <form action="update.php" method="POST">
+            <label for="search_name"><i class="fas fa-user-edit"></i> Enter Name to Update:</label>
+            <input type="text" id="search_name" name="search_name" required>
+            <input type="submit" value="Search">
+        </form>
+        <div class="update-footer">
+            <i class="fas fa-sync"></i>
+            Update your records easily
+        </div>
+    </div>
+</body>
+</html>

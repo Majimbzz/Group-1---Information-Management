@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #ff6a6a 0%, #ffd6d6 100%);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .delete-card {
+            background: rgba(255,235,235,0.96);
+            border-radius: 26px;
+            box-shadow: 0 14px 36px rgba(255,90,90,0.12);
+            padding: 36px 38px 22px 38px;
+            max-width: 390px;
+            width: 93%;
+        }
+        .delete-title {
+            display: flex;
+            align-items: center;
+            font-size: 2em;
+            color: #f44336;
+            margin-bottom: 15px;
+            justify-content: center;
+            gap: 12px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+        .delete-title i {
+            font-size: 1.13em;
+            animation: pulseDelete 1.7s infinite;
+        }
+        @keyframes pulseDelete {
+            0% { color: #f44336; transform: scale(1); }
+            50% { color: #ffd6d6; transform: scale(1.16); }
+            100% { color: #f44336; transform: scale(1); }
+        }
+        label {
+            color: #a73131;
+            font-size: 1.05em;
+            margin-bottom: 6px;
+            font-weight: 600;
+            display: block;
+        }
+        input[type="text"] {
+            width: 97%;
+            padding: 9px 8px;
+            border-radius: 8px;
+            border: 1px solid #ffa6a6;
+            font-size: 1em;
+            margin-bottom: 14px;
+            background: #fff2f2;
+        }
+        input[type="submit"] {
+            background: linear-gradient(90deg,#e57373,#ff6a6a 88%);
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 14px;
+            padding: 11px 33px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255,90,90,0.13);
+            transition: background 0.23s, box-shadow 0.18s;
+            font-size: 1em;
+            letter-spacing: 1px;
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg,#ff6a6a,#e57373 100%);
+            box-shadow: 0 8px 19px rgba(255,76,76,0.17);
+        }
+        .delete-footer {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 1.02em;
+            color: #de2c2c;
+        }
+        @media (max-width: 480px) {
+            .delete-card { padding: 15px 7px 7px 7px; }
+            .delete-title { font-size: 1.13em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="delete-card">
+        <div class="delete-title"><i class="fas fa-trash-alt"></i>Delete Registration</div>
+        <form action="delete.php" method="POST">
+            <label for="delete_name"><i class="fas fa-user-slash"></i> Enter Name to Delete:</label>
+            <input type="text" id="delete_name" name="delete_name" required>
+            <input type="submit" value="Delete">
+        </form>
+        <div class="delete-footer">
+            <i class="fas fa-exclamation-circle"></i>
+            Double check before deleting
+        </div>
+    </div>
+</body>
+</html>

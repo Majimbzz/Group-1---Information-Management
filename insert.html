@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Forms</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #ff9a9e 0%, #fad0c4 100%);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .form-card {
+            background: rgba(255,255,255,0.88);
+            border-radius: 24px;
+            box-shadow: 0 14px 32px rgba(80,0,32,0.12);
+            padding: 34px 40px 14px 40px;
+            max-width: 430px;
+            width: 90%;
+        }
+        .form-title {
+            display: flex;
+            align-items: center;
+            font-size: 2.1em;
+            color: #ff5e62;
+            margin-bottom: 17px;
+            justify-content: center;
+            gap: 9px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+        .form-title i {
+            font-size: 1.1em;
+            animation: spinTitle 1.7s linear infinite;
+        }
+        @keyframes spinTitle {
+            0% { transform: rotate(-11deg);}
+            50% { transform: rotate(15deg);}
+            100% { transform: rotate(-11deg);}
+        }
+        h4 {
+            text-align: center;
+            color: #3d246c;
+            font-weight: 400;
+            margin-bottom: 18px;
+        }
+        form table {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        form td {
+            padding: 8px 4px;
+            font-size: 1em;
+            color: #56416d;
+        }
+        input[type="text"] {
+            width: 97%;
+            padding: 9px 7px;
+            border-radius: 8px;
+            border: 1px solid #ffb1b1;
+            font-size: 1em;
+            margin-bottom: 8px;
+            background: #fef7f1;
+        }
+        select {
+            padding: 7px 9px;
+            border-radius: 8px;
+            border: 1px solid #e0aacd;
+            font-size: 1em;
+            color: #56416d;
+            margin-bottom: 7px;
+            background: #f9f3f9;
+        }
+        input[type="radio"] {
+            accent-color: #ff5e62;
+        }
+        label {
+            color: #403353;
+            font-size: 1em;
+            margin-left: 4px;
+        }
+        .input-section-icon {
+            font-size: 1.15em;
+            color: #ff5e62;
+            margin-right: 6px;
+        }
+        input[type="submit"] {
+            background: linear-gradient(90deg,#ff5e62,#ff9966 80%);
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            padding: 11px 32px;
+            margin: 19px auto 0;
+            cursor: pointer;
+            box-shadow: 0 4px 18px rgba(200, 70, 90, 0.14);
+            transition: background 0.23s, box-shadow 0.19s;
+            font-size: 1em;
+            letter-spacing: 1px;
+            display: block;
+        }
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg,#ff9966,#ff5e62 100%);
+            box-shadow: 0 8px 25px rgba(255,90,100,0.14);
+        }
+        .form-footer {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 1.04em;
+            color: #76416d;
+        }
+        @media (max-width: 540px) {
+            .form-card {padding: 18px 7px 7px 7px;}
+            .form-title {font-size: 1.15em;}
+        }
+    </style>
+</head>
+<body>
+    <div class="form-card">
+        <div class="form-title"><i class="fas fa-user-edit"></i>Registration Form</div>
+        <h4><marquee direction="right" style="width:85%;">Please fill in the below details</marquee></h4>
+        <form action="dbconnect.php" method="POST">
+            <table>
+                <tr>
+                    <td><i class="fas fa-user input-section-icon"></i>First Name:</td>
+                    <td><input type="text" name="fname" required></td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-user input-section-icon"></i>Middle Name:</td>
+                    <td><input type="text" name="mname"></td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-user input-section-icon"></i>Last Name:</td>
+                    <td><input type="text" name="lname" required></td>
+                </tr>
+            </table>
+            <p><i class="fas fa-venus-mars input-section-icon"></i>Sex:</p>
+            <input type="radio" id="gender1" name="sex" value="Male">
+            <label for="gender1">Male</label>
+            <input type="radio" id="gender2" name="sex" value="Female">
+            <label for="gender2">Female</label>
+            <br><br>
+            <label for="level"><i class="fas fa-layer-group input-section-icon"></i>Your year level:</label>
+            <select name="level" id="level">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <br>
+            <label for="course"><i class="fas fa-graduation-cap input-section-icon"></i>Select your course:</label>
+            <select name="course" id="course">
+                <option value="BSIT">BSIT</option>
+                <option value="BSCS">BSCS</option>
+                <option value="BSIS">BSIS</option>
+                <option value="BLIS">BLIS</option>
+            </select>
+            <input type="submit" value="Save">
+        </form>
+        <div class="form-footer">
+            <i class="fas fa-heart" style="color: #ff5e62;"></i>
+            Powered by PHP & MySQL |
+            <i class="fas fa-envelope"></i>
+            <i class="fab fa-facebook"></i>
+        </div>
+    </div>
+</body>
+</html>
